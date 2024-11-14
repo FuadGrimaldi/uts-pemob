@@ -1,0 +1,48 @@
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'dart:ui';
+import 'onboarding_widget.dart' show OnboardingWidget;
+import 'package:smooth_page_indicator/smooth_page_indicator.dart'
+    as smooth_page_indicator;
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // State field(s) for PageView widget.
+  PageController? pageViewController;
+
+  int get pageViewCurrentIndex => pageViewController != null &&
+          pageViewController!.hasClients &&
+          pageViewController!.page != null
+      ? pageViewController!.page!.round()
+      : 0;
+  // State field(s) for inputName widget.
+  FocusNode? inputNameFocusNode1;
+  TextEditingController? inputNameTextController1;
+  String? Function(BuildContext, String?)? inputNameTextController1Validator;
+  // State field(s) for inputName widget.
+  FocusNode? inputNameFocusNode2;
+  TextEditingController? inputNameTextController2;
+  String? Function(BuildContext, String?)? inputNameTextController2Validator;
+
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {
+    inputNameFocusNode1?.dispose();
+    inputNameTextController1?.dispose();
+
+    inputNameFocusNode2?.dispose();
+    inputNameTextController2?.dispose();
+  }
+}
